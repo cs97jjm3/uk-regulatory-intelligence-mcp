@@ -1,0 +1,22 @@
+{
+  "name": "uk-regulatory-intelligence",
+  "displayName": "UK Regulatory Intelligence",
+  "description": "Track UK regulatory publications, parliamentary activity, and compliance changes across multiple sectors (CQC, Ofsted, SRA, etc.)",
+  "version": "1.0.0",
+  "publisher": "James Blair",
+  "icon": "icon.png",
+  "mcp": {
+    "command": "node",
+    "args": ["index.js"],
+    "env": {
+      "SECTORS": "social-care"
+    }
+  },
+  "installation": {
+    "steps": [
+      {
+        "type": "npm_install"
+      }
+    ]
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "manifest_version": "0.2",
+  "name": "uk-regulatory-intelligence-mcp",
+  "version": "1.0.0",
+  "description": "MCP server for tracking UK regulatory intelligence across multiple sectors",
+  "long_description": "Track UK regulatory publications, parliamentary activity, and compliance changes across social care, education, legal, charities, local government, recruitment, and construction sectors",
+  "author": {
+    "name": "James Murrell",
+    "email": "murrell.james@gmail.com",
+    "url": "https://github.com/cs97jjm3"
+  },
+  "homepage": "https://github.com/cs97jjm3/uk-regulatory-intelligence-mcp",
+  "documentation": "https://github.com/cs97jjm3/uk-regulatory-intelligence-mcp",
+  "support": "https://github.com/cs97jjm3/uk-regulatory-intelligence-mcp/issues",
+  "icon": "icon.png",
+  "server": {
+    "type": "node",
+    "entry_point": "index.js",
+    "mcp_config": {
+      "command": "node",
+      "args": [
+        "${__dirname}/index.js"
+      ],
+      "env": {
+        "SECTORS": "${user_config.sectors}"
+      }
+    }
+  },
+  "user_config": {
+    "sectors": {
+      "type": "string",
+      "title": "Sectors to Track",
+      "description": "Comma-separated list of sectors to monitor:\n\n• social-care = CQC, DHSC, care homes\n• education = Ofsted, DfE, schools, SEND\n• legal = SRA, Law Society, solicitors\n• charities = Charity Commission\n• local-authority = DLUHC, councils\n• recruitment = Employment agencies\n• construction = HSE, building safety\n\nExample: social-care,education,legal",
+     "required": false,
+      "sensitive": false,
+      "default": "social-care"
+    }
+  },
+  "tools": [
+    {
+      "name": "search_publications"
+    },
+    {
+      "name": "get_parliamentary_questions"
+    },
+    {
+      "name": "get_regulatory_calendar"
+    },
+    {
+      "name": "generate_monthly_digest"
+    },
+    {
+      "name": "list_configured_sectors"
+    }
+  ],
+  "keywords": [
+    "uk",
+    "regulatory",
+    "compliance",
+    "cqc",
+    "ofsted",
+    "government",
+    "social-care",
+    "education",
+    "legal",
+    "charities",
+    "local-authority",
+    "recruitment",
+    "construction"
+  ],
+  "license": "MIT"
+}
